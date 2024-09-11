@@ -6,7 +6,6 @@ function calculateTax(income, expenses) {
   const tax = difference * 0.2;
   return tax;
 }
-console.log(calculateTax(-5000, 2000));
 
 function sendNotification(email) {
   if (!email.includes("@")) {
@@ -24,14 +23,12 @@ function checkDigitsInName(name) {
   if (typeof name !== "string") {
     return "Invalid Input";
   }
-
   for (let nam of name) {
-    if (nam >= "0" && nam <= "9") {
+    if (!isNaN(nam)) {
       return true;
-    } else {
-      return false;
     }
   }
+  return false;
 }
 
 function calculateFinalScore(obj) {
