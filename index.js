@@ -6,4 +6,15 @@ function calculateTax(income, expenses) {
   const tax = difference * 0.2;
   return tax;
 }
-console.log(calculateTax(6000, 10000));
+
+function sendNotification(email) {
+  if (!email.includes("@")) {
+    return "Invalid Email";
+  }
+  const emailArr = email.split("@");
+  const userName = emailArr[0];
+  const domainName = emailArr[1];
+  const notificationMessage =
+    userName + " sent you an email from " + domainName;
+  return notificationMessage;
+}
